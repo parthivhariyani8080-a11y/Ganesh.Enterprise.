@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ગણેશ એન્ટરપ્રાઇઝ | ડિજિટલ સેવા કેન્દ્ર</title>
-<meta name="description" content="ગણેશ એન્ટરપ્રાઇઝ - આધાર, પાન કાર્ડ, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન અને ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી ફોર્મ.">
+<meta name="description" content="ગણેશ એન્ટરપ્રાઇઝ - આધાર, પાન કાર્ડ, વ્હાલી દીકરી યોજના, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન અને ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી ફોર્મ.">
 
 <style>
 :root {
     --primary: #102c52;
     --secondary: #164e86;
-    --inquiry-blue: #0d6efd;
-    --inquiry-blue-hover: #0b5ed7;
+    --blue-gradient: linear-gradient(135deg, #1e60d5 0%, #0d47a1 100%);
+    --gold-gradient: linear-gradient(135deg, #e5b95f 0%, #c49632 100%);
+    --green-gradient: linear-gradient(135deg, #209653 0%, #13733b 100%);
     --gold: #d6ad55;
     --green: #16834a;
     --light: #f4f7fb;
@@ -79,7 +80,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 3px 15px rgba(16, 44, 82, 0.08);
+    box-shadow: 0 4px 18px rgba(16, 44, 82, 0.08);
 }
 
 .navbar {
@@ -130,15 +131,17 @@ header {
 }
 
 .nav-inquiry {
-    background: var(--inquiry-blue);
+    background: var(--blue-gradient);
     color: white !important;
-    padding: 8px 16px;
-    border-radius: 7px;
-    transition: background .2s;
+    padding: 9px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.25);
+    transition: all .25s ease;
 }
 
 .nav-inquiry:hover {
-    background: var(--inquiry-blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(13, 71, 161, 0.35);
 }
 
 .hero {
@@ -185,28 +188,63 @@ header {
     margin-top: 25px;
 }
 
+/* Professional Styled Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 7px;
     border: none;
-    border-radius: 7px;
-    padding: 10px 16px;
+    border-radius: 8px;
+    padding: 10px 18px;
     font-weight: 700;
     font-size: 13px;
-    transition: all .25s ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all .25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2.5px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
 }
 
-.btn-primary { background: var(--secondary); color: white; }
-.btn-blue { background: var(--inquiry-blue); color: white; }
-.btn-blue:hover { background: var(--inquiry-blue-hover); }
-.btn-gold { background: var(--gold); color: #18243a; }
-.btn-light { background: #eaf0f7; color: var(--primary); }
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary { 
+    background: linear-gradient(135deg, #1a4175 0%, #102c52 100%); 
+    color: white; 
+}
+
+.btn-blue { 
+    background: var(--blue-gradient); 
+    color: white; 
+    box-shadow: 0 4px 14px rgba(30, 96, 213, 0.28);
+}
+
+.btn-blue:hover {
+    box-shadow: 0 8px 20px rgba(30, 96, 213, 0.4);
+}
+
+.btn-gold { 
+    background: var(--gold-gradient); 
+    color: #121c2d; 
+    box-shadow: 0 4px 14px rgba(214, 173, 85, 0.3);
+}
+
+.btn-light { 
+    background: #edf2f9; 
+    color: var(--primary); 
+    border: 1px solid #d4e0ef;
+    box-shadow: none;
+}
+
+.btn-light:hover {
+    background: #e2eaf5;
+    border-color: #bccfe6;
+}
 
 .section { padding: 55px 0; }
 .section-white { background: white; }
@@ -227,7 +265,6 @@ header {
     margin-top: 7px;
 }
 
-/* Shop Summary Box */
 .about-box {
     background: linear-gradient(135deg, #ffffff, #f0f6ff);
     border: 1px solid #c9dcfa;
@@ -262,7 +299,7 @@ header {
     background: white;
     padding: 12px 16px;
     border-radius: 8px;
-    border-left: 4px solid var(--inquiry-blue);
+    border-left: 4px solid #1e60d5;
     font-size: 13px;
     font-weight: 600;
     color: var(--primary);
@@ -287,7 +324,6 @@ header {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* PC Floating Hover Effect */
 .card {
     background: white;
     border: 1px solid var(--border);
@@ -304,7 +340,7 @@ header {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 14px 28px rgba(16, 44, 82, 0.12);
-    border-color: var(--inquiry-blue);
+    border-color: #1e60d5;
 }
 
 .card-icon {
@@ -557,7 +593,6 @@ footer a:hover {
     justify-content: center;
 }
 
-/* Bottom Back Button in Popup */
 .modal-bottom-back {
     margin-top: 15px;
     text-align: center;
@@ -567,8 +602,8 @@ footer a:hover {
     background: #f1f4f8;
     color: var(--primary);
     border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 8px 18px;
+    border-radius: 8px;
+    padding: 9px 18px;
     font-size: 13px;
     font-weight: 700;
     display: inline-flex;
@@ -576,6 +611,7 @@ footer a:hover {
     gap: 6px;
     width: 100%;
     justify-content: center;
+    transition: all .2s;
 }
 
 .modal-back-btn:hover {
@@ -624,17 +660,26 @@ footer a:hover {
 .form-group select {
     width: 100%;
     border: 1px solid #ccd6e2;
-    border-radius: 7px;
+    border-radius: 8px;
     padding: 11px 12px;
     outline: none;
     background: white;
     font-size: 13px;
+    transition: all 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: var(--inquiry-blue);
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    border-color: #1e60d5;
+    box-shadow: 0 0 0 3px rgba(30, 96, 213, 0.15);
+}
+
+.validation-error {
+    color: #d32f2f;
+    font-size: 11px;
+    margin-top: 4px;
+    display: none;
+    font-weight: 600;
 }
 
 .form-hint {
@@ -645,18 +690,20 @@ footer a:hover {
 
 .whatsapp-btn {
     width: 100%;
-    background: var(--inquiry-blue);
+    background: var(--blue-gradient);
     color: white;
     border: none;
-    padding: 12px;
+    padding: 13px;
     border-radius: 8px;
     font-weight: bold;
     font-size: 14px;
-    transition: background .2s;
+    box-shadow: 0 4px 14px rgba(30, 96, 213, 0.3);
+    transition: all .25s ease;
 }
 
 .whatsapp-btn:hover {
-    background: var(--inquiry-blue-hover);
+    box-shadow: 0 7px 20px rgba(30, 96, 213, 0.45);
+    transform: translateY(-2px);
 }
 
 body.modal-open {
@@ -708,6 +755,7 @@ body.modal-open {
             <a href="#about">અમારા વિશે</a>
             <a href="#vacancies">ભરતી</a>
             <a href="#aadhaar">આધાર-PAN</a>
+            <a href="#yojna">દીકરી યોજના</a>
             <a href="#vehicle">વાહન લોન & વીમો</a>
             <a href="#student">વિદ્યાર્થી</a>
             <a href="#loans">લોન અને ક્રેડિટ કાર્ડ</a>
@@ -723,7 +771,7 @@ body.modal-open {
     <div class="container">
         <span class="hero-label">તમારી વિશ્વસનીય ડિજિટલ સેવા</span>
         <h2>ગણેશ એન્ટરપ્રાઇઝ<br><span>ડિજિટલ સેવા કેન્દ્ર</span></h2>
-        <p>રાજુલા અને મહુવામાં આધાર-PAN, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન & ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી સેવાઓ માટેનું અગ્રેસર કેન્દ્ર.</p>
+        <p>રાજુલા અને મહુવામાં આધાર-PAN, વ્હાલી દીકરી યોજના, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન & ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી સેવાઓ માટેનું અગ્રેસર કેન્દ્ર.</p>
         <div class="hero-buttons">
             <a href="#vacancies" class="btn btn-gold">📢 સરકારી ભરતી જુઓ</a>
             <button class="btn btn-blue" onclick="openInquiry('સામાન્ય પૂછપરછ')">💬 Inquiry કરો</button>
@@ -747,16 +795,16 @@ body.modal-open {
 
         <div class="benefits">
             <div class="benefit">
+                <strong>👧 વ્હાલી દીકરી યોજના</strong>
+                <span>સંપૂર્ણ અરજી સહાય</span>
+            </div>
+            <div class="benefit">
                 <strong>🚗 વાહન લોન & વીમો</strong>
                 <span>કોમર્શિયલ અને પર્સનલ ગાડીઓ</span>
             </div>
             <div class="benefit">
                 <strong>💳 ક્રેડિટ કાર્ડ સેવા</strong>
                 <span>સ્વાઇપ, કેશ ઉપાડ અને બિલ</span>
-            </div>
-            <div class="benefit">
-                <strong>🎓 વિદ્યાર્થી સેવા</strong>
-                <span>એડમિશન અને સ્કોલરશિપ</span>
             </div>
             <div class="benefit">
                 <strong>🌾 ખેડૂત સેવા</strong>
@@ -835,8 +883,53 @@ body.modal-open {
     </div>
 </section>
 
-<!-- VEHICLE LOAN & INSURANCE (NEW DEDICATED SECTION) -->
-<section class="section" id="vehicle">
+<!-- VAHALI DIKRI YOJNA (NEW SECTION) -->
+<section class="section" id="yojna">
+    <div class="container">
+        <div class="section-heading">
+            <h2>👧 મહિલા & બાળ કલ્યાણ યોજના</h2>
+            <p>ગુજરાત સરકારની દીકરીઓ માટેની કલ્યાણકારી યોજનાઓનું માર્ગદર્શન.</p>
+        </div>
+
+        <div class="grid grid-2">
+            <!-- Vahali Dikri Yojna Card -->
+            <article class="card" onclick="cardClick(event, 'વ્હાલી દીકરી યોજના')">
+                <div class="card-icon">🌸</div>
+                <h3>વ્હાલી દીકરી યોજના</h3>
+                <p class="loan-note">દીકરીના ઉજ્જવળ ભવિષ્ય માટે સરકાર તરફથી કુલ ₹1,10,000 સુધીની આર્થિક સહાય.</p>
+                <ul>
+                    <li>ધોરણ-1 માં પ્રવેશ વખતે: ₹4,000 સહાય</li>
+                    <li>ધોરણ-9 માં પ્રવેશ વખતે: ₹6,000 સહાય</li>
+                    <li>૧૮ વર્ષની ઉંમરે ઉચ્ચ શિક્ષણ/લગ્ન સહાય: ₹1,00,000</li>
+                    <li>ઓનલાઇન અરજી, ડોક્યુમેન્ટ વેરિફિકેશન અને સ્ટેટસ ચેક</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('વ્હાલી દીકરી યોજના')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('વ્હાલી દીકરી યોજના')">Inquiry</button>
+                </div>
+            </article>
+
+            <!-- Sukanya Samriddhi & Other Girl Child Schemes -->
+            <article class="card" onclick="cardClick(event, 'સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">
+                <div class="card-icon">🏦</div>
+                <h3>સુકન્યા સમૃદ્ધિ યોજના</h3>
+                <p class="loan-note">દીકરી માટે ઉચ્ચ વ્યાજદર અને ટેક્સ ફ્રી બચત ખાતું ખોલાવવા માર્ગદર્શન.</p>
+                <ul>
+                    <li>પોસ્ટ ઓફિસ / બેંક ખાતું ખોલાવવા ફોર્મ સહાય</li>
+                    <li>દીકરીના જન્મથી ૧૦ વર્ષ સુધી ખાતું ખોલાવી શકાય</li>
+                    <li>સરકારી સુરક્ષિત રોકાણ યોજના માહિતી</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- VEHICLE LOAN & INSURANCE -->
+<section class="section section-white" id="vehicle">
     <div class="container">
         <div class="section-heading">
             <h2>🚗 વાહન લોન અને ઇન્સ્યોરન્સ સુવિધાઓ (Vehicle Services)</h2>
@@ -844,7 +937,6 @@ body.modal-open {
         </div>
 
         <div class="grid">
-            <!-- Commercial / Transportation Vehicle -->
             <article class="card" onclick="cardClick(event, 'કોમર્શિયલ વાહન લોન અને વીમો')">
                 <div class="card-icon">🚛</div>
                 <h3>ટ્રાન્સપોર્ટેશન વાહન (Commercial)</h3>
@@ -860,7 +952,6 @@ body.modal-open {
                 </div>
             </article>
 
-            <!-- Personal Vehicle -->
             <article class="card" onclick="cardClick(event, 'પર્સનલ વાહન લોન અને વીમો')">
                 <div class="card-icon">🚘</div>
                 <h3>અંગત વાહન (Personal Vehicle)</h3>
@@ -876,7 +967,6 @@ body.modal-open {
                 </div>
             </article>
 
-            <!-- Vehicle Insurance Renewal & Claims -->
             <article class="card" onclick="cardClick(event, 'વાહન વીમો અને પોલિસી રીન્યુઅલ')">
                 <div class="card-icon">🛡️</div>
                 <h3>વાહન વીમો અને રીન્યુઅલ</h3>
@@ -896,7 +986,7 @@ body.modal-open {
 </section>
 
 <!-- AADHAAR & PAN -->
-<section class="section section-white" id="aadhaar">
+<section class="section" id="aadhaar">
     <div class="container">
         <div class="section-heading">
             <h2>🪪 આધાર કાર્ડ અને PAN કાર્ડ સુવિધા</h2>
@@ -949,8 +1039,8 @@ body.modal-open {
     </div>
 </section>
 
-<!-- STUDENT (Updated: Removed Certificates/Dakhla) -->
-<section class="section" id="student">
+<!-- STUDENT -->
+<section class="section section-white" id="student">
     <div class="container">
         <div class="section-heading">
             <h2>🎓 વિદ્યાર્થી ફોર્મ અને સ્કોલરશિપ</h2>
@@ -990,7 +1080,7 @@ body.modal-open {
 </section>
 
 <!-- LOANS & CREDIT CARDS -->
-<section class="section section-white" id="loans">
+<section class="section" id="loans">
     <div class="container">
         <div class="section-heading">
             <h2>💳 ક્રેડિટ કાર્ડ અને સામાન્ય લોન સુવિધાઓ</h2>
@@ -1047,7 +1137,7 @@ body.modal-open {
 </section>
 
 <!-- FARMER -->
-<section class="section" id="farmer">
+<section class="section section-white" id="farmer">
     <div class="container">
         <div class="section-heading">
             <h2>🌾 ખેડૂત કલ્યાણ સુવિધાઓ</h2>
@@ -1101,7 +1191,7 @@ body.modal-open {
 </section>
 
 <!-- BUSINESS MSME GST -->
-<section class="section section-white" id="business">
+<section class="section" id="business">
     <div class="container">
         <div class="section-heading">
             <h2>💼 MSME અને વેપારી સેવાઓ</h2>
@@ -1160,7 +1250,7 @@ body.modal-open {
         <div>
             <h3>ગણેશ એન્ટરપ્રાઇઝ</h3>
             <p>ડિજિટલ સેવા કેન્દ્ર</p>
-            <p style="margin-top: 10px;">તમામ ઓનલાઈન ફોર્મ, વાહન લોન અને વીમો, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ અને સરકારી યોજનાઓ માટે વિશ્વાસપાત્ર કેન્દ્ર.</p>
+            <p style="margin-top: 10px;">તમામ ઓનલાઈન ફોર્મ, વ્હાલી દીકરી યોજના, વાહન લોન અને વીમો, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ અને સરકારી યોજનાઓ માટે વિશ્વાસપાત્ર કેન્દ્ર.</p>
             <p style="margin-top: 8px; color: #ffdb8c;">🕒 સમય: સવારે 9:00 થી સાંજે 8:00</p>
         </div>
 
@@ -1182,11 +1272,11 @@ body.modal-open {
 
         <div>
             <h3>ઝડપી લિંક્સ</h3>
-            <p><a href="#aadhaar">આધાર અને PAN કાર્ડ સેવા</a></p>
+            <p><a href="#yojna">વ્હાલી દીકરી યોજના</a></p>
             <p><a href="#vehicle">વાહન લોન & ઇન્સ્યોરન્સ</a></p>
+            <p><a href="#aadhaar">આધાર અને PAN કાર્ડ સેવા</a></p>
             <p><a href="#loans">ક્રેડિટ કાર્ડ & લોન સહાય</a></p>
-            <p><a href="#student">વિદ્યાર્થી સ્કોલરશિપ અને એડમિશન</a></p>
-            <p><a href="#farmer">ખેડૂત યોજનાઓ (i-Khedut)</a></p>
+            <p><a href="#student">વિદ્યાર્થી સ્કોલરશિપ</a></p>
         </div>
     </div>
 
@@ -1217,15 +1307,32 @@ body.modal-open {
 
         <!-- INQUIRY FORM VIEW -->
         <div id="inquiryFormView" style="display: none;">
-            <form onsubmit="handleFormSubmit(event)">
+            <form onsubmit="handleFormSubmit(event)" novalidate>
+                <!-- NAME INPUT -->
                 <div class="form-group">
                     <label for="userName">તમારું પૂરું નામ:</label>
-                    <input type="text" id="userName" placeholder="નામ દાખલ કરો" required>
+                    <input 
+                        type="text" 
+                        id="userName" 
+                        placeholder="નામ દાખલ કરો (માત્ર અક્ષરો)" 
+                        required 
+                        autocomplete="off"
+                        oninput="validateNameInput(this)">
+                    <div id="nameError" class="validation-error">કૃપા કરીને માત્ર સાચા અક્ષરો (નામ) લખો, નંબર નહીં.</div>
                 </div>
 
+                <!-- PHONE INPUT -->
                 <div class="form-group">
                     <label for="userPhone">મોબાઇલ નંબર:</label>
-                    <input type="tel" id="userPhone" placeholder="10 આંકડાનો મોબાઇલ નંબર" required>
+                    <input 
+                        type="tel" 
+                        id="userPhone" 
+                        placeholder="10 આંકડાનો મોબાઇલ નંબર" 
+                        required 
+                        maxlength="10"
+                        autocomplete="off"
+                        oninput="validatePhoneInput(this)">
+                    <div id="phoneError" class="validation-error">કૃપા કરીને બરાબર ૧૦ આંકડાનો સાચો મોબાઇલ નંબર દાખલ કરો.</div>
                 </div>
 
                 <div class="form-group">
@@ -1263,9 +1370,29 @@ body.modal-open {
 <script>
 // જરૂરી દસ્તાવેજોની યાદી
 const serviceDocuments = {
+    // Vahali Dikri & Girl Schemes
+    'વ્હાલી દીકરી યોજના': [
+        'દીકરીનો જન્મ દાખલો (Birth Certificate)',
+        'માતા અને પિતાનું આધાર કાર્ડ',
+        'માતા-પિતાના લગ્ન નોંધણી પ્રમાણપત્ર (મેરેજ સર્ટિફિકેટ)',
+        'સક્ષમ અધિકારીશ્રીનો આવકનો દાખલો (વાર્ષિક આવક મર્યાદા ₹2 લાખ સુધી)',
+        'દીકરી અથવા માતાના નામે રાષ્ટ્રીયકૃત બેંક પાસબુક પ્રથમ પાનું',
+        'રેશન કાર્ડ નકલ',
+        'માતા-પિતાનું નિયત નમૂનાનું સોગંદનામું (Affidavit)'
+    ],
+    'સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન': [
+        'દીકરીનો જન્મ દાખલો',
+        'વાલી/માતા-પિતાનું ઓળખપત્ર (આધાર કાર્ડ, PAN કાર્ડ)',
+        'રહેઠાણનો પુરાવો (લાઇટબિલ/રેશન કાર્ડ)',
+        'વાલી અને બાળકીના પાસપોર્ટ સાઇઝ ફોટો'
+    ],
+
+    // Aadhaar & PAN
     'આધાર-PAN લિંકિંગ': ['આધાર કાર્ડ નકલ', 'PAN કાર્ડ નકલ', 'લિંક થયેલ મોબાઇલ નંબર'],
     'PAN કાર્ડ સેવા': ['ઓળખનો પુરાવો (આધાર કાર્ડ)', 'જન્મ તારીખનો પુરાવો', 'પાસપોર્ટ સાઇઝ ફોટો (૨ નકલ)', 'સહીનો નમૂનો'],
     'ચૂંટણી કાર્ડ અને રેશન કાર્ડ': ['આધાર કાર્ડ', 'રેશન કાર્ડ', 'પાસપોર્ટ સાઇઝ ફોટો', 'સરનામાનો પુરાવો'],
+    
+    // Students
     'એડમિશન અને પરીક્ષા ફોર્મ': ['અગાઉની માર્કશીટ (10th/12th/Semesters)', 'LC / શાળા છોડ્યાનું પ્રમાણપત્ર', 'જાતિનો દાખલો (જો લાગુ પડે તો)', 'પાસપોર્ટ સાઇઝ ફોટો'],
     'સ્કોલરશિપ સહાય': ['આધાર કાર્ડ', 'કોલેજ/શાળા ફી પહોંચ', 'બોનાફાઇડ સર્ટિફિકેટ', 'આવકનો દાખલો', 'બેંક પાસબુક', 'છેલ્લી માર્કશીટ'],
     
@@ -1291,6 +1418,7 @@ const serviceDocuments = {
         'વાહન માલિકનું નામ અને મોબાઈલ નંબર'
     ],
 
+    // Loans & Credit Cards
     'ક્રેડિટ કાર્ડ સુવિધા': [
         'અસલ ક્રેડિટ કાર્ડ (Original Physical Card)',
         'કાર્ડધારકનું આધાર કાર્ડ / PAN કાર્ડ',
@@ -1299,9 +1427,13 @@ const serviceDocuments = {
     ],
     'મુદ્રા અને બિઝનેસ લોન': ['આધાર કાર્ડ અને PAN કાર્ડ', 'છેલ્લા 6 મહિનાનું બેંક સ્ટેટમેન્ટ', 'વ્યવસાય નોંધણી (ઉદ્યમ સર્ટિફિકેટ)', 'પાસપોર્ટ સાઇઝ ફોટો'],
     'પર્સનલ અને હોમ લોન': ['આધાર અને PAN કાર્ડ', 'આવકનો પુરાવો (ITR / પગાર સ્લિપ)', 'બેંક સ્ટેટમેન્ટ (6 મહિના)', 'મકાન દસ્તાવેજ (હોમ લોન માટે)'],
+    
+    // Farmer
     'i-Khedut પોર્ટલ અરજી': ['૭/૧૨ અને ૮-અ જમીનની નકલ', 'આધાર કાર્ડ', 'બેંક પાસબુક પ્રથમ પાનું'],
     'PM કિસાન સન્માન નિધિ': ['જમીન ૭/૧૨ અને ૮-અ', 'આધાર કાર્ડ', 'બેંક પાસબુક', 'મોબાઇલ નંબર'],
     'જમીન રેકોર્ડ્સ (AnyRoR)': ['ખાતા નંબર અથવા સર્વે નંબર', 'ગામ અને તાલુકાનું નામ'],
+    
+    // MSME & GST
     'ઉદ્યમ રજિસ્ટ્રેશન (MSME)': ['માલિકનું આધાર કાર્ડ', 'PAN કાર્ડ', 'બેંક ખાતા નંબર અને IFSC', 'ધંધાનું નામ અને શરૂ તારીખ'],
     'GST સુવિધાઓ': ['PAN કાર્ડ અને આધાર કાર્ડ', 'દુકાન ભાડા કરાર / લાઇટબિલ', 'કેન્સલ ચેક / પાસબુક', 'પાસપોર્ટ સાઇઝ ફોટો'],
     'ગુમાસ્તા અને ફૂડ લાયસન્સ': ['આધાર કાર્ડ', 'દુકાન માલિકી પુરાવો', 'પાસપોર્ટ સાઇઝ ફોટો']
@@ -1320,6 +1452,26 @@ const branchContacts = {
 };
 
 let previousModalState = null;
+
+// NAME VALIDATION: અંગ્રેજી, ગુજરાતી અને માત્ર સ્પેસ જ એલોવ કરવી (નંબર ટાઇપ નહીં થાય)
+function validateNameInput(input) {
+    input.value = input.value.replace(/[^a-zA-Z\u0A80-\u0AFF\s]/g, '');
+    const nameError = document.getElementById('nameError');
+    if (input.value.trim().length === 0) {
+        nameError.style.display = 'block';
+    } else {
+        nameError.style.display = 'none';
+    }
+}
+
+// PHONE VALIDATION: માત્ર આંકડા જ એલોવ કરવા (આલ્ફાબેટ્સ નહીં)
+function validatePhoneInput(input) {
+    input.value = input.value.replace(/\D/g, '');
+    const phoneError = document.getElementById('phoneError');
+    if (input.value.length === 10) {
+        phoneError.style.display = 'none';
+    }
+}
 
 function updateContactPersons() {
     const branchSelect = document.getElementById('branchSelect');
@@ -1383,6 +1535,10 @@ function openInquiry(serviceName) {
     modalTitle.innerText = 'Inquiry / પૂછપરછ ફોર્મ';
     selectedServiceInput.value = serviceName || 'સામાન્ય પૂછપરછ';
 
+    // રીસેટ એરર મેસેજીસ
+    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('phoneError').style.display = 'none';
+
     updateContactPersons();
 
     modalContent.style.display = 'none';
@@ -1406,17 +1562,41 @@ function closeModal() {
     previousModalState = null;
 }
 
-window.onclick = function(event) {
-    const modal = document.getElementById('infoModal');
-    if (event.target === modal) {
-        closeModal();
-    }
-};
+// બહાર ક્લિક કરવાથી પૉપઅપ બંધ ન થાય તે માટે window.onclick હટાવી દીધું છે.
+// હવે માત્ર બેક બટન કે Close (X) પર ક્લિક કરવાથી જ બંધ થશે.
 
 function handleFormSubmit(event) {
     event.preventDefault();
-    const name = document.getElementById('userName').value.trim();
-    const phone = document.getElementById('userPhone').value.trim();
+    const nameInput = document.getElementById('userName');
+    const phoneInput = document.getElementById('userPhone');
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    let isValid = true;
+
+    if (name.length < 2) {
+        nameError.style.display = 'block';
+        nameInput.focus();
+        isValid = false;
+    } else {
+        nameError.style.display = 'none';
+    }
+
+    if (phone.length !== 10) {
+        phoneError.style.display = 'block';
+        if (isValid) phoneInput.focus();
+        isValid = false;
+    } else {
+        phoneError.style.display = 'none';
+    }
+
+    if (!isValid) {
+        return; // ૧૦ આંકડા અને સાચું નામ ન હોય ત્યાં સુધી સબમિટ નહીં થાય
+    }
+
     const branchSelect = document.getElementById('branchSelect');
     const branchName = branchSelect.options[branchSelect.selectedIndex].text;
     const targetPhone = document.getElementById('contactPersonSelect').value;
